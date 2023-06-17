@@ -12,7 +12,6 @@ async function fetchData() {
 }
 
 export const SidebarHead = () => {
-  const [state, setState] = useState();
   const dispatch = useDispatch();
   const addChatbox = () => {
     fetchData().then((data) => {
@@ -28,7 +27,6 @@ export const SidebarHead = () => {
         id: login.uuid,
       };
       dispatch(addChatbot(user));
-      setState(user);
     });
   };
   return (

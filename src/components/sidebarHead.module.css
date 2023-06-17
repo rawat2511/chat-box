@@ -1,7 +1,9 @@
 .container {
-    display: flex;
-    padding: 20px;
+    padding: 8px;
     justify-content: right;
+    position: sticky;
+    top: 0;
+    background-color: rgb(81, 81, 184);
 }
 
 .image {

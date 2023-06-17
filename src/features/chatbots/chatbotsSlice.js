@@ -8,7 +8,6 @@ export const chatbotsSlice = createSlice({
   reducers: {
     addChatbot: (state, action) => {
       const chatbot = action.payload;
-      console.log({ state });
       state.chatbots.push(chatbot);
     },
     deleteChatbot: (state, action) => {

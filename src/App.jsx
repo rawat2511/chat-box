@@ -2,14 +2,14 @@
 // import viteLogo from '/vite.svg'
 
 import "./App.css";
-import { Sidebar } from "./components/Sidebar";
-import { ChatScreen } from "./components/ChatScreen";
+import { SidebarHead } from "../src/components/sidebarHead";
+import { ChatbotList } from "./components/ChatbotList";
 
 function App() {
   return (
     <div className="container">
-      <Sidebar />
-      <ChatScreen />
+      <SidebarHead />
+      <ChatbotList />
     </div>
   );
 }

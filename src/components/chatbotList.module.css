@@ -1,16 +1,79 @@
-.image {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
+.name {
+    margin: 0;
+    font-size: 10px;
+    font-weight: bold;
 }
 
-.itemContainer {
+.chatText {
+    margin: 0;
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 88%;
+}
+
+.othersChat {
+    max-width: 250px;
+    border: 1px solid blue;
+    border-radius: 6px;
+    padding: 6px 10px;
+    left: 0;
+}
+
+.chatDiv {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.chatContent {
+    border: 2px solid gray;
+    
+}
+
+.myChat {
+    max-width: 250px;
+    justify-content: right;
+    border: 1px solid blue;
+    border-radius: 6px;
+    margin: 2px;
+    display: flex;
+    padding: 6px 10px;
+    justify-content: right;
+}
+
+.othersChatContainer {
+    display: flex;
+    justify-content: right;
+    margin: 2px;
+    padding: 2px;
+}
+
+.chatbotList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chatbox {
+    padding: 14px;
+    margin: 20px;
+    border: 1px solid red;
+    border-radius: 20px;
+    height: 500px;
+    width: 400px;
+}
+
+.image {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.userDetails {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    padding: 20px;
-    margin: auto;
     border-top: 1px solid white;
 }
 
@@ -21,4 +84,14 @@
     padding: 8px 16px;
     border-radius: 2px;
     font-size: large;
+}
+
+.inputBox {
+    display: flex;
+}
+.input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
 }

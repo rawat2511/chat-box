@@ -2,7 +2,7 @@
 // import viteLogo from '/vite.svg'
 
 import "./App.css";
-import { SidebarHead } from "../src/components/sidebarHead";
+import { SidebarHead } from "src/components/sidebarHead";
 import { ChatbotList } from "./components/ChatbotList";
 
 function App() {

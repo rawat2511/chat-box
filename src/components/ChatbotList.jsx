@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./chatbotList.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteChatbot } from "../features/chatbots/chatbotsSlice";
@@ -26,29 +26,41 @@ const ListItem = ({ id, name, image }) => {
 };
 
 const Chats = ({ currentUserId, chats }) => {
+  const messageContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Scroll to the bottom of the message container
+    messageContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chats]);
+
   return (
     <div className={styles.eachChat}>
       {chats.length
-        ? chats.map(({ userId, chatId, name, chat }) => {
-            return currentUserId === userId ? (
-              <div className={styles.myChatContainer}>
-                <div key={chatId} className={styles.myChat}>
-                  <p className={styles.chatText}>{chat}</p>
-                </div>
-              </div>
-            ) : (
-              <div className={styles.othersChatContainer}>
-                <div key={chatId} className={styles.othersChat}>
-                  <p className={styles.name}>{name}</p>
+        ? chats.map(({ userId, chatId, name, chat }, i) => {
+            const isCurrentUser = currentUserId === userId;
+            const chatContainerClass = isCurrentUser
+              ? styles.myChatContainer
+              : styles.othersChatContainer;
+            const chatContentClass = isCurrentUser
+              ? styles.myChat
+              : styles.othersChat;
+
+            return (
+              <div className={chatContainerClass} key={chatId}>
+                <div className={chatContentClass}>
+                  {!isCurrentUser && <p className={styles.name}>{name}</p>}
                   <p className={styles.chatText}>{chat}</p>
                 </div>
               </div>
             );
           })
         : null}
+      <span ref={messageContainerRef} />
     </div>
   );
 };
+
+export default Chats;
 
 const ChatSection = ({ id, name }) => {
   const [input, setInput] = useState("");

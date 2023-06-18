@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./chatbotList.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteChatbot } from "../features/chatbots/chatbotsSlice";
-import { addMessage } from "../features/chats/chatsSlice";
+import { deleteChatbot } from "@features/chatbots/chatbotsSlice";
+import { addMessage } from "@features/chats/chatsSlice";
 import { v4 as uuid } from "uuid";
 
 const ListItem = ({ id, name, image }) => {

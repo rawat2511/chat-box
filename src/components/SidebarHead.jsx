@@ -1,7 +1,7 @@
-import createIcon from "../assets/newChatbox.jpg";
+import createIcon from "@assets/newChatbox.jpg";
 import styles from "./sidebarHead.module.css";
 import axios from "axios";
-import { addChatbot } from "../features/chatbots/chatbotsSlice";
+import { addChatbot } from "@features/chatbots/chatbotsSlice";
 import { useDispatch } from "react-redux";
 
 async function fetchData() {

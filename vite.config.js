@@ -11,7 +11,11 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   resolve: {
     alias: {
-      src: resolve(__dirname, "src"),
+      "@src": path.resolve(__dirname, "./src"),
+      "@assets": path.resolve(__dirname, "./src/assets"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@features": path.resolve(__dirname, "./src/features"),
+      "@app": path.resolve(__dirname, "./app"),
     },
   },
   esbuild: {
